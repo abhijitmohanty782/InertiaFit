@@ -65,7 +65,7 @@ const NutritionPage = () => {
     console.log('Submitting nutrition data:', data);
     
     // Make API call to Flask backend
-    fetch('http://localhost:5000/api/nutrition', {
+    fetch('https://inertiafit.onrender.com/api/nutrition', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
