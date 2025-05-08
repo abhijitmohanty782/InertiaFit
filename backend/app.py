@@ -41,9 +41,9 @@ class CustomJSONEncoder(json.JSONEncoder):
 app.json_encoder = CustomJSONEncoder
 
 # Configuration
-app.config["MONGO_URI"] = "mongodb+srv://Amritesh:OpPgCVoOPpakzgoc@cluster0.rdwmp.mongodb.net/inertiafit?retryWrites=true&w=majority"
-app.config["JWT_SECRET_KEY"] = os.getenv('JWT_SECRET', 'super-secret-key')
-app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "super-secret-key")
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(seconds=int(os.getenv("JWT_ACCESS_TOKEN_EXPIRES", 3600)))
 
 # Initialize extensions
 mongo = PyMongo(app)
