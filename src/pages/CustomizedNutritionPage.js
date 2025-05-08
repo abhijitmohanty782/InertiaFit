@@ -262,7 +262,7 @@ const CustomizedNutritionPage = () => {
     setRecommendations([]);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/custom-nutrition', {
+      const response = await axios.post('https://inertiafit.onrender.com/api/custom-nutrition', {
           nutrition_values_list: [
             nutritionPreferences.calories,
             nutritionPreferences.fat,
