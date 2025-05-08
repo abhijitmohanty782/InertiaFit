@@ -228,7 +228,7 @@ const DashboardPage = () => {
 
     try {
       
-      const response =type!=='extra'? await fetch(`http://localhost:5000/api/user/${userData.id}/foods`, {
+      const response =type!=='extra'? await fetch(`https://inertiafit.onrender.com/api/user/${userData.id}/foods`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -238,7 +238,7 @@ const DashboardPage = () => {
           lunch: selectedFoods.lunch,
           dinner: selectedFoods.dinner,
           extra: []
-      })}):await fetch(`http://localhost:5000/api/user/${userData.id}/foods`, {
+      })}):await fetch(`https://inertiafit.onrender.com/api/user/${userData.id}/foods`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -332,7 +332,7 @@ const DashboardPage = () => {
         // If localStorage data incomplete, try to fetch from API
         if (!user.age || !user.height || !user.weight) {
           try {
-            const response = await axios.get(`http://localhost:5000/api/user/${user.id}`, {
+            const response = await axios.get(`https://inertiafit.onrender.com/api/user/${user.id}`, {
               headers: {
                 'Authorization': `Bearer ${token}`
               }
@@ -480,7 +480,7 @@ const DashboardPage = () => {
       }
       
       const response = await axios.put(
-        `http://localhost:5000/api/user/${user.id}`, 
+        `https://inertiafit.onrender.com/api/user/${user.id}`, 
         editFormData,
         {
           headers: {
@@ -588,7 +588,7 @@ const DashboardPage = () => {
       
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:5000/api/user/${userData.id}/food-data/${date}`, {
+      const response = await axios.get(`https://inertiafit.onrender.com/api/user/${userData.id}/food-data/${date}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -614,7 +614,7 @@ const DashboardPage = () => {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:5000/api/user/${userData.id}/exercise-data/${date}`, {
+      const response = await axios.get(`https://inertiafit.onrender.com/api/user/${userData.id}/exercise-data/${date}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -659,7 +659,7 @@ const DashboardPage = () => {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:5000/api/user/${userData.id}/exercise-history?days=${days}`, {
+      const response = await axios.get(`https://inertiafit.onrender.com/api/user/${userData.id}/exercise-history?days=${days}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -701,7 +701,7 @@ const DashboardPage = () => {
         'walk': parseInt(exerciseFormData['walk']) || 0
       };
       
-      await axios.post(`http://localhost:5000/api/user/${userData.id}/exercise-data`, data, {
+      await axios.post(`https://inertiafit.onrender.com/api/user/${userData.id}/exercise-data`, data, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -774,7 +774,7 @@ const DashboardPage = () => {
     console.log('Submitting nutrition data:', data);
     
     // Make API call to Flask backend
-    fetch('http://localhost:5000/api/nutrition', {
+    fetch('https://inertiafit.onrender.com/api/nutrition', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -861,7 +861,7 @@ const DashboardPage = () => {
     setCustomNutritionError(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/custom-nutrition', {
+      const response = await fetch('https://inertiafit.onrender.com/api/custom-nutrition', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -3492,7 +3492,7 @@ const DashboardPage = () => {
     
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/user/${userData.id}/exercise-data/${selectedFoodDate}`, {
+      await axios.delete(`https://inertiafit.onrender.com/api/user/${userData.id}/exercise-data/${selectedFoodDate}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
