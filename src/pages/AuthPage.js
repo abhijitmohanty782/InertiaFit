@@ -79,7 +79,7 @@ const AuthPage = () => {
           joinDate: new Date().toISOString()
         };
       
-      const response = await axios.post(`http://localhost:5000${endpoint}`, payload);
+      const response = await axios.post(`https://inertiafit.onrender.com${endpoint}`, payload);
       
       if (isLogin) {
         // Save token and user data
