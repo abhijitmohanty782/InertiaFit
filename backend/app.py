@@ -18,7 +18,7 @@ import re
 app = Flask(__name__)
 # Configure CORS properly to allow requests from frontend
 CORS(app, resources={r"/*": {
-    "origins": ["http://localhost:3000", "http://localhost:3001", "http://127.0.0.1:3000", "http://127.0.0.1:3001","https://inertiafit-3.onrender.com"],
+    "origins": ["http://localhost:3000", "http://localhost:3001", "http://127.0.0.1:3000", "http://127.0.0.1:3001","https://inertiafit-3.onrender.com","https://inertiafit-ai.onrender.com"],
     "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     "allow_headers": ["Content-Type", "Authorization", "Access-Control-Allow-Credentials"],
     "supports_credentials": True
